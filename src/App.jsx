@@ -6,7 +6,7 @@ import AddBook from './components/AddBook'
 function App() {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/bookstore">
       <AppBar position='static'>
         <Toolbar>
           <Typography variant="h6">

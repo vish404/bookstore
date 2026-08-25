@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Alert, Box, Button, Snackbar, Stack, TextField, Typography } from '@mui/material'
 import SaveIcon from '@mui/icons-material/Save';
+import CancelIcon from '@mui/icons-material/Cancel';
 import { useNavigate } from 'react-router';
 
 function AddBook() {
@@ -90,7 +91,14 @@ function AddBook() {
                         name="price"
                         value={book.price}
                         onChange={inputChanged} />
-                    <Button onClick={addBook} variant="outlined" startIcon={<SaveIcon />}>Add</Button>
+                    <Box sx={{
+                        display: 'flex', 
+                        gap: 2
+
+                    }}>
+                        <Button onClick={()=> navigate('/')} color="info" variant="outlined" startIcon={<CancelIcon />}>Cancel</Button>
+                        <Button onClick={addBook}  color='success' variant="outlined" startIcon={<SaveIcon />}>Add</Button>
+                    </Box>
                 </Stack>
             </Box>
             <Snackbar
